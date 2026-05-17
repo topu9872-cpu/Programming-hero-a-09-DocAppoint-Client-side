@@ -1,3 +1,4 @@
+import Banner from "@/componanets/HeroPage/HeroPage";
 
 
 export default function Home() {
@@ -5,7 +6,7 @@ export default function Home() {
    
     <div>
      
-   
+   <Banner/>
     </div>
   );
 }
