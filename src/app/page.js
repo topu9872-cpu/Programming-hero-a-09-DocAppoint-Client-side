@@ -1,3 +1,4 @@
+import FontCards from "@/componanets/FontCards/FontCards";
 import Banner from "@/componanets/HeroPage/HeroPage";
 
 
@@ -7,6 +8,7 @@ export default function Home() {
     <div>
      
    <Banner/>
+   <FontCards/>
     </div>
   );
 }
