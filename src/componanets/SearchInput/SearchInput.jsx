@@ -37,7 +37,7 @@ const SearchInput = ({ doctors }) => {
         
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5">
         
         {filterSearch.length>0? (filterSearch.map((doctor) => (
           <AllCards key={doctor._id} doctor={doctor} />

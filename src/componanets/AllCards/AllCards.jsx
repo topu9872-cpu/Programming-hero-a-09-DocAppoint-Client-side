@@ -5,12 +5,12 @@ import { FaStar } from "react-icons/fa6";
 
 const AllCards = ({doctor}) => {
   return (
-    <div className="mx-auto">
+   
        <div
           
-            className="card bg-base-100 w-96 rounded-2xl shadow-sm"
+            className="card bg-base-100 w-90 rounded-2xl shadow-sm"
           >
-            <p className="absolute top-4 left-76 bg-white rounded-2xl px-2 font-medium text-lg text-info flex items-center gap-1">
+            <p className="absolute top-4 left-70 bg-white rounded-2xl px-2 font-medium text-lg text-info flex items-center gap-1">
               <FaStar className="text-yellow-500" />
               {doctor.rating}
             </p>
@@ -19,7 +19,7 @@ const AllCards = ({doctor}) => {
               width={200}
               height={240}
               alt={doctor.name}
-              className="image-full w-full rounded-t-xl rounded h-70"
+              className="image-full w-full rounded-t-xl rounded h-60"
             />
 
             <div className="space-y-1 mt-2 p-4">
@@ -43,7 +43,7 @@ const AllCards = ({doctor}) => {
               </div>
             </div>
           </div>
-    </div>
+    
   );
 };
 

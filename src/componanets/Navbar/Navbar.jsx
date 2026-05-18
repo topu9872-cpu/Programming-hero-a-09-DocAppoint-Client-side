@@ -1,35 +1,59 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const pathName = usePathname();
 
-
   const navData = (
     <>
-      <li className={`font-bold text-lg ${pathName === "/" ? "text-info" : ""}`}>
+      <li
+        className={`font-bold text-lg ${
+          pathName === "/" ? "text-info" : ""
+        }`}
+      >
         <Link href={"/"}>Homepage</Link>
       </li>
-      <li className={`font-bold text-lg ${pathName === "/all-appoinment" ? "text-info" : ""}`}>
+
+      <li
+        className={`font-bold text-lg ${
+          pathName === "/all-appoinment" ? "text-info" : ""
+        }`}
+      >
         <Link href={"/all-appoinment"}>All Appointment</Link>
       </li>
-      <li className={`font-bold text-lg ${pathName === "/dashboard" ? "text-info" : ""}`}>
+
+      <li
+        className={`font-bold text-lg ${
+          pathName === "/dashboard" ? "text-info" : ""
+        }`}
+      >
         <Link href={"/dashboard"}>Dashboard</Link>
       </li>
     </>
   );
 
   return (
-    <nav className="w-full bg-base-100 shadow-sm">
-
-      <div className="navbar max-w-7xl mx-auto px-4 sm:px-10 lg:px-20">
-      
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration:1, ease: "easeOut" }}
+      className="w-full bg-base-100/80 backdrop-blur-md shadow-sm sticky top-0 z-50"
+    >
+      <div className="navbar  mx-auto px-4 sm:px-10 lg:px-20 flex justify-between relative">
+        
+     
         <div className="navbar-start gap-2">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden p-1">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden p-1"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -45,6 +69,7 @@ const Navbar = () => {
                 />
               </svg>
             </div>
+
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-4 shadow gap-2"
@@ -52,44 +77,48 @@ const Navbar = () => {
               {navData}
             </ul>
           </div>
-        
-          <div className="w-13 h-13 sm:w-18 sm:h-18 relative">
-            <Image src="/assets/docicon.png" fill alt="icon" className="object-contain" />
-          </div>
+
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ duration: 0.3 }}
+            className="w-13 h-13 sm:w-18 sm:h-18 relative"
+          >
+            <Image
+              src="/assets/docicon.png"
+              fill
+              alt="icon"
+              className="object-contain rounded-sm"
+            />
+          </motion.div>
         </div>
 
-      
-        <div className="navbar-center hidden lg:flex">
+        {/* CENTER */}
+        <div className="navbar-center absolute left-1/2 -translate-x-1/2 hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-6">
             {navData}
           </ul>
         </div>
 
-      
-          <div className="space-x-2 sm:space-x-4 flex">
-            <button className="btn btn-sm sm:btn-md btn-info font-semibold text-white px-3 sm:px-6">
-              Login
-            </button>
-            <button className="btn btn-sm sm:btn-md btn-info font-semibold text-white px-3 sm:px-6">
-              Register
-            </button>
-          </div>
+        {/* RIGHT */}
+        <div className="space-x-2 sm:space-x-4 flex">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn btn-sm sm:btn-md btn-info font-semibold text-white px-3 sm:px-6"
+          >
+            Login
+          </motion.button>
 
-         
-          <div className="space-x-4 hidden items-center">
-            <div className="avatar avatar-placeholder">
-              <div className="w-9 rounded-full bg-amber-400">
-                <span>SY</span>
-              </div>
-            </div>
-            <button className="btn btn-sm sm:btn-md btn-error">
-              Logout
-            </button>
-          </div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn btn-sm sm:btn-md btn-info font-semibold text-white px-3 sm:px-6"
+          >
+            Register
+          </motion.button>
         </div>
-
-    
-    </nav>
+      </div>
+    </motion.nav>
   );
 };
 
