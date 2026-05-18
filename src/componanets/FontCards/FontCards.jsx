@@ -1,10 +1,10 @@
 import { Suspense } from "react";
-import AllCards from "../AllCards/AllCards";
+
+import { getDoctors } from "../../../lib/actiondata";
+import AllCards from "@/app/all-cards/page";
 
 const FontCards = async () => {
-  const res = await fetch("http://localhost:2000/all-doctors");
-  const doctors = await res.json();
-
+ const doctors= await getDoctors()
   const topDoctors = doctors.sort((a, b) => b.rating - a.rating).slice(0, 3);
 
   return (

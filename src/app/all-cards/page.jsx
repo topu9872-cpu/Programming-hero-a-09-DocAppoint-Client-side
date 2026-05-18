@@ -1,5 +1,6 @@
 import { Clock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaEye } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 
@@ -19,7 +20,7 @@ const AllCards = ({doctor}) => {
               width={200}
               height={240}
               alt={doctor.name}
-              className="image-full w-full rounded-t-xl rounded h-60"
+              className="image-full w-full rounded-t-xl rounded h-60 pointer-events-none inset-0 select-none"
             />
 
             <div className="space-y-1 mt-2 p-4">
@@ -37,9 +38,9 @@ const AllCards = ({doctor}) => {
               </div>
               <p>{doctor.description}</p>
               <div className="card-actions justify-end pt-4">
-                <button className="btn btn-info text-lg items-center text-white font-bold">
+               <Link href={`/all-cards/${doctor._id}`}> <button className="btn btn-info text-lg items-center text-white font-bold">
                   <FaEye /> Viwe
-                </button>
+                </button></Link>
               </div>
             </div>
           </div>

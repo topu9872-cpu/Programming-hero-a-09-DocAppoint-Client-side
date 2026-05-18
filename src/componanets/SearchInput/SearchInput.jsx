@@ -2,8 +2,9 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-import AllCards from "../AllCards/AllCards";
+
 import NotFoundcard from "../NotFoundCard/NotFoundcard";
+import AllCards from "@/app/all-cards/page";
 
 const SearchInput = ({ doctors }) => {
   const [search, setSearch] = useState("");

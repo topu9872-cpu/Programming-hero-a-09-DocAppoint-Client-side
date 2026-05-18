@@ -12,7 +12,7 @@ const MedicalSolutions = () => {
       viewport={{ once: true }}
       className="flex flex-col flex-1/2 mx-auto md:flex-row items-center gap-8 p-6"
     >
-      {/* Image */}
+    
       <motion.div
         variants={{
           hidden: { x: -80, opacity: 0 },
@@ -29,7 +29,7 @@ const MedicalSolutions = () => {
         />
       </motion.div>
 
-      {/* Text */}
+    
       <motion.div
         variants={{
           hidden: { x: 80, opacity: 0 },
