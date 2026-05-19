@@ -1,10 +1,8 @@
 import { AlertDialog, Button } from "@heroui/react";
 import { getBookingappoinmentDelete } from "../../../lib/actiondata";
 import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
 
 const BookingDelete = ({ book }) => {
-  const router = useRouter();
   console.log(book.name);
   const handleDelete = async (id) => {
     const getDelete = await getBookingappoinmentDelete(id);
@@ -15,7 +13,7 @@ const BookingDelete = ({ book }) => {
         position: "top-right",
       });
 
-      router.refresh();
+      window.location.reload();
     }
   };
   return (
@@ -28,7 +26,7 @@ const BookingDelete = ({ book }) => {
       </Button>
       <AlertDialog.Backdrop>
         <AlertDialog.Container>
-          <AlertDialog.Dialog className="sm:max-w-[400px]">
+          <AlertDialog.Dialog className="sm:max-w-100">
             <AlertDialog.CloseTrigger />
             <AlertDialog.Header>
               <AlertDialog.Icon status="danger" />

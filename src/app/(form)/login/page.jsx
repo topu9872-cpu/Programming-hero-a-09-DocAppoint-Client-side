@@ -9,23 +9,23 @@ const LoginPage = () => {
   return (
     <div className="mx-auto my-20 w-fit">
       <div className="flex items-center justify-center min-h-screen bg-gray-50 p-4">
-        <div className="w-[350px] h-[520px] bg-white rounded-[10px] p-[20px_30px] shadow-[0_5px_15px_rgba(0,0,0,0.35)] box-border flex flex-col justify-between">
+        <div className="w-88 h-130 bg-white rounded-[10px] p-[20px_30px] shadow-[0_5px_15px_rgba(0,0,0,0.35)] box-border flex flex-col justify-between">
           <div>
-            <p className="text-center font-sans mt-[10px] mb-[30px] text-[28px] font-extrabold text-gray-900">
+            <p className="text-center font-sans mt-3 mb-8 text-[28px] font-extrabold text-gray-900">
               Welcome back
             </p>
 
-            <form className="w-full flex flex-col gap-[18px] mb-[15px]">
+            <form className="w-full flex flex-col gap-3.5 mb-4">
               <input
                 type="email"
-                className="w-full rounded-[20px] border border-[#c0c0c0] outline-none px-[15px] py-[12px] box-border text-sm placeholder-gray-400 focus:border-teal-600 transition-colors"
+                className="w-full rounded-[20px] border border-[#c0c0c0] outline-none px-4 py-3 box-border text-sm placeholder-gray-400 focus:border-teal-600 transition-colors"
                 placeholder="Email"
               />
 
               <div className="relative w-full">
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="w-full rounded-[20px] border border-[#c0c0c0] outline-none pl-[15px] pr-[45px] py-[12px] box-border text-sm placeholder-gray-400 focus:border-teal-600 transition-colors"
+                  className="w-full rounded-[20px] border border-[#c0c0c0] outline-none pl-4 pr-11 py-3 box-border text-sm placeholder-gray-400 focus:border-teal-600 transition-colors"
                   placeholder="Password"
                 />
 
@@ -50,7 +50,7 @@ const LoginPage = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="px-[15px] py-[10px] font-sans rounded-[20px] border-0 outline-none bg-teal-700 text-white cursor-pointer shadow-[0_3px_8px_rgba(0,0,0,0.24)] active:shadow-none hover:bg-teal-800 transition-all"
+                className="px-4 py-3 font-sans rounded-[20px] border-0 outline-none bg-teal-700 text-white cursor-pointer shadow-[0_3px_8px_rgba(0,0,0,0.24)] active:shadow-none hover:bg-teal-800 transition-all"
               >
                 Log in
               </button>
@@ -60,7 +60,7 @@ const LoginPage = () => {
             <p className=" text-[10px] text-[#747474] font-sans">
               Don't have an account?
               <Link href={"/register"}>
-                <span className="ml-[1px] text-[11px] underline decoration-teal-700 text-teal-700 cursor-pointer font-extrabold font-sans hover:text-teal-800">
+                <span className=" text-[11px] underline decoration-teal-700 text-teal-700 cursor-pointer font-extrabold font-sans hover:text-teal-800">
                   Sign up
                 </span>
               </Link>

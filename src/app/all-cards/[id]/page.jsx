@@ -28,7 +28,7 @@ const DoctorDetails = async ({ params }) => {
         {/* Card Container */}
         <div className="flex flex-col lg:flex-row">
           {/* Image */}
-          <div className="w-full lg:w-[320px] h-[280px] lg:h-auto relative">
+          <div className="w-full lg:w-[320px] h-70 lg:h-auto relative">
             <Image
               src={image}
               fill

@@ -13,15 +13,16 @@ const BookingAppoinmentUpdateForm = ({ book }) => {
     const bookingDatas = Object.fromEntries(formData.entries());
 
     const bookingUpdate = {
+      id: book._id,
       name: bookingDatas.name,
-
       phone: bookingDatas.phone,
       date: bookingDatas.date,
       time: bookingDatas.time,
     };
 
-     const res = await getUpDateBooking(bookingUpdate);
+    const res = await getUpDateBooking(bookingUpdate);
     if (res) {
+      window.location.reload();
       toast.success("Appointment Updated successfully!", {
         position: "top-right",
       });
@@ -44,7 +45,10 @@ const BookingAppoinmentUpdateForm = ({ book }) => {
             </Modal.Header>
             <Modal.Body className=" p-6">
               <Surface variant="default">
-                <form onSubmit={handleUpdateBooking} className="flex flex-col gap-4">
+                <form
+                  onSubmit={handleUpdateBooking}
+                  className="flex flex-col gap-4"
+                >
                   <TextField className="w-full" name="name" type="text">
                     <Label>Patient Name</Label>
                     <Input placeholder="Enter your name" />
@@ -66,7 +70,7 @@ const BookingAppoinmentUpdateForm = ({ book }) => {
                     <Button slot="close" variant="secondary">
                       Cancel
                     </Button>
-                    <Button onClick={} type="submit">Update Booking </Button>
+                    <Button type="submit">Update Booking </Button>
                   </Modal.Footer>
                 </form>
               </Surface>
