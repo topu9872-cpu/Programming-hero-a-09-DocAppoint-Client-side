@@ -9,9 +9,9 @@ const AllCards = ({doctor}) => {
    
        <div
           
-            className="card bg-base-100 w-90 rounded-2xl shadow-sm"
+            className="relative bg-base-100 w-90 rounded-2xl shadow-sm"
           >
-            <p className="absolute top-4 left-70 bg-white rounded-2xl px-2 font-medium text-lg text-info flex items-center gap-1">
+            <p className="absolute top-3 shadow-[0_0_10px_#ffffff] hover-3d left-70 bg-white rounded-2xl px-2 font-medium text-lg text-info flex items-center gap-1">
               <FaStar className="text-yellow-500" />
               {doctor.rating}
             </p>
@@ -20,7 +20,7 @@ const AllCards = ({doctor}) => {
               width={200}
               height={240}
               alt={doctor.name}
-              className="image-full w-full rounded-t-xl rounded h-60 pointer-events-none inset-0 select-none"
+              className=" w-full rounded-t-xl rounded h-60 "
             />
 
             <div className="space-y-1 mt-2 p-4">
@@ -38,7 +38,7 @@ const AllCards = ({doctor}) => {
               </div>
               <p>{doctor.description}</p>
               <div className="card-actions justify-end pt-4">
-               <Link href={`/all-cards/${doctor._id}`}> <button className="btn btn-info text-lg items-center text-white font-bold">
+               <Link href={`/all-cards/${doctor._id}`}> <button className="btn btn-info hover-3d text-lg items-center text-white font-bold">
                   <FaEye /> Viwe
                 </button></Link>
               </div>
