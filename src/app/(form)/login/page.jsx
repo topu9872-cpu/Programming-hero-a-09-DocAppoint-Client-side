@@ -2,8 +2,67 @@
 import React, { useState } from "react";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
+import { createAuthClient } from "better-auth/client";
 
 const LoginPage = () => {
+
+ const authClient = createAuthClient();
+const GoogleSignIn = async () => {
+  try {
+    const data = await authClient.signIn.social({
+      provider: "google",
+      callbackURL:('/')
+    });
+
+    if (data) {
+      toast.success("Login Successfuly!");
+      
+    }
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+ 
+  const GithubSignIn = async () => {
+  try {
+    const data = await authClient.signIn.social({
+      provider: "github",
+      callbackURL:('/')
+    });
+
+    if (data) {
+      toast.success("Login Successfuly!");
+      
+    }
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const login = Object.fromEntries(formData.entries());
+console.log(login)
+    const { data, error } = await authClient.signIn.email({
+      email: login.email,
+      password: login.password,
+      callbackURL: "/",
+    });
+    if (data) {
+      toast.success("Login Susseccfully!", {
+        position: "top-right",
+      });
+    }
+
+    if (error) {
+      toast.error(error.message);
+    }
+  };
+
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -15,8 +74,12 @@ const LoginPage = () => {
               Welcome back
             </p>
 
-            <form className="w-full flex flex-col gap-3.5 mb-4">
+            <form
+              onSubmit={handleLogin}
+              className="w-full flex flex-col gap-3.5 mb-4"
+            >
               <input
+              name="email"
                 type="email"
                 className="w-full rounded-[20px] border border-[#c0c0c0] outline-none px-4 py-3 box-border text-sm placeholder-gray-400 focus:border-teal-600 transition-colors"
                 placeholder="Email"
@@ -24,12 +87,13 @@ const LoginPage = () => {
 
               <div className="relative w-full">
                 <input
+                name="password"
                   type={showPassword ? "text" : "password"}
                   className="w-full rounded-[20px] border border-[#c0c0c0] outline-none pl-4 pr-11 py-3 box-border text-sm placeholder-gray-400 focus:border-teal-600 transition-colors"
                   placeholder="Password"
                 />
 
-                {/* Toggle Button */}
+           
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
@@ -40,7 +104,7 @@ const LoginPage = () => {
                 </button>
               </div>
 
-              {/* Forgot Password */}
+        
               <p className="underline text-right text-[#747474] decoration-[#747474]">
                 <span className="cursor-pointer font-sans text-[9px] font-bold hover:text-black transition-colors">
                   Forgot Password?
@@ -66,9 +130,9 @@ const LoginPage = () => {
               </Link>
             </p>
           </div>
-  <div className="divider">or</div>
+          <div className="divider">or</div>
           <div className="mt-0 space-y-3">
-            <button className="btn bg-black w-full rounded-full text-white border-black">
+            <button onClick={GithubSignIn} className="btn bg-black w-full rounded-full text-white border-black">
               <svg
                 aria-label="GitHub logo"
                 width="16"
@@ -85,7 +149,7 @@ const LoginPage = () => {
             </button>
 
             {/* Google */}
-            <button className="btn bg-white text-black  w-full rounded-full border-[#e5e5e5]">
+            <button onClick={GoogleSignIn} className="btn bg-white text-black  w-full rounded-full border-[#e5e5e5]">
               <svg
                 aria-label="Google logo"
                 width="16"
