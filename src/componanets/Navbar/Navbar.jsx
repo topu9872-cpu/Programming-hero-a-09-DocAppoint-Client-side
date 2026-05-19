@@ -2,12 +2,32 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { motion } from "framer-motion";
+import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const router=useRouter()
   const pathName = usePathname();
+
+const {data:session}=authClient.useSession()
+const user=session?.user
+console.log(user)
+
+const handleLogout=async()=>{
+ 
+
+await authClient.signOut({
+  fetchOptions: {
+    onSuccess: () => {
+      toast.error('Logout Susseccfully !')
+      router.push("/login");
+    },
+  },
+});
+}
 
   const navData = (
     <>
@@ -99,24 +119,45 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* RIGHT */}
-        <div className="space-x-2 sm:space-x-4 flex">
+       {!user?
+        <div className="space-x-2 sm:space-x-4  flex">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn btn-sm sm:btn-md btn-info font-semibold text-white px-3 sm:px-6"
+            className="btn btn-sm sm:btn-md btn-info font-bold text-white px-3 sm:px-6"
           >
-            Login
+          <Link href={'/login'}>  Login</Link>
           </motion.button>
 
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn btn-sm sm:btn-md btn-info font-semibold text-white px-3 sm:px-6"
+            className="btn btn-sm sm:btn-md btn-info font-bold text-white px-3 sm:px-6"
           >
-            Register
+           <Link href={'/register'}> Register</Link>
           </motion.button>
         </div>
+:
+        <div className="relative flex space-x-5">
+          <div className=" text-xl font-bold text-info  right-20 absolute flex w-30 overflow-hidden">{user?.name.split(' ').pop()} !</div>
+          
+          <div className="avatar">
+  <div className="w-24 rounded-full">
+     <p className="status status-success left-7 top-7 bg-green-400 absolute animate-ping"></p>
+    <Image src={user?.image} height={60} width={60} alt={user?.name}/>
+    
+  </div>
+ 
+</div>
+          <motion.button onClick={ handleLogout}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn btn-sm sm:btn-md btn-error font-bold text-white px-3 sm:px-6"
+          >
+            Logout
+          </motion.button>
+        </div>
+}
       </div>
     </motion.nav>
   );
