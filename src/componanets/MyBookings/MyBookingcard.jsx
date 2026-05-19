@@ -1,7 +1,12 @@
 
 import Image from "next/image";
+
+import BookingDelete from "../bookingDelete/BookingDelete";
+import BookingAppoinmentUpdateForm from "../BookingAppoinmentUpdateForm/BookingAppoinmentUpdateForm";
 const MyBookingcard = ({booking }) => {
-    console.log(booking)
+
+ 
+    
   return (
     <div>
         <div className="mx-4 md:mx-10 lg:mx-20">
@@ -58,13 +63,9 @@ const MyBookingcard = ({booking }) => {
 
          
             <div className="flex flex-col sm:flex-row lg:flex-row lg:mt-40 gap-3 p-5 w-full lg:w-auto">
-  <button className="btn btn-info text-white w-full sm:w-auto">
-    Edit
-  </button>
-
-  <button className="btn btn-error text-white w-full sm:w-auto">
-    Delete
-  </button>
+  <BookingAppoinmentUpdateForm book={book}/>
+<BookingDelete book={book}/>
+  
 </div>
           </div>
         ))}
