@@ -4,13 +4,19 @@ import { getBookingDoctor } from "../../../lib/actiondata";
 import MyBookingcard from "./MyBookingcard";
 import NotFoundcard from "../NotFoundCard/NotFoundcard";
 
+
+
+
 const MyBookings =  () => {
+  
   
   const [booking, setBooking]=useState([])
 useEffect(()=>{
 const data = getBookingDoctor().then(data=>setBooking(data))
 
 },[])
+
+
   return (
     <div>
       { booking?

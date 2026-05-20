@@ -21,11 +21,15 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
+
+ 
+
+
 const MyProfile = () => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
 
-  console.log(user);
+  
   return (
     <div className="mx-auto flex justify-center">
       {!user ? (

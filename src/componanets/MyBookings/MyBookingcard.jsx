@@ -4,6 +4,8 @@ import BookingDelete from "../bookingDelete/BookingDelete";
 import BookingAppoinmentUpdateForm from "../BookingAppoinmentUpdateForm/BookingAppoinmentUpdateForm";
 
 const MyBookingcard = ({ booking }) => {
+
+  
   return (
     <div className="mx-4 md:mx-10 lg:mx-20">
       {booking.map((book) => (
@@ -12,10 +14,10 @@ const MyBookingcard = ({ booking }) => {
           className="group relative flex flex-col lg:flex-row justify-between items-center gap-6 my-8 rounded-3xl border border-cyan-100 bg-white/90 backdrop-blur-md overflow-hidden shadow-lg hover:shadow-cyan-200/60 hover:-translate-y-1 transition-all duration-300"
         >
           {/* Glow Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-100/20 via-transparent to-cyan-100/20 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-cyan-100/20 via-transparent to-cyan-100/20 opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
           {/* Image */}
-          <div className="relative w-full lg:w-[350px] h-[260px] overflow-hidden">
+          <div className="relative w-full lg:w-88 h-65 overflow-hidden">
             <Image
               src={book?.image}
               width={350}

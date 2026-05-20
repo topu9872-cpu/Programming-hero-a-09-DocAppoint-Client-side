@@ -140,12 +140,12 @@ await authClient.signOut({
         </div>
 :
         <div className="relative flex space-x-5">
-          <div className=" text-xl font-bold text-info  right-20 absolute flex w-30 overflow-hidden">{user?.name.split(' ').pop()} !</div>
+          <div className=" text-xl font-bold text-info mr-14 right-20 absolute flex w-30 truncate overflow-hidden">{user?.name} </div>
           
           <div className="avatar">
   <div className="w-24 rounded-full">
      <p className="status status-success left-7 top-7 bg-green-400 absolute animate-ping"></p>
-    <Image src={user?.image} height={60} width={60} alt={user?.name}/>
+    <Image src={user?.image} height={80} width={80} alt={user?.name}/>
     
   </div>
  
