@@ -6,19 +6,26 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 const ProfileUpdaeForm = ({ user }) => {
-  const router=useRouter()
+  const router = useRouter();
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   console.log(image);
   const handleUpdate = async (e) => {
     e.preventDefault();
 
+    const updateObjsect = {};
+    if (name) {
+      updateObjsect.name = name;
+    }
+    if (image) {
+      updateObjsect.image = image;
+    }
+
     await authClient.updateUser({
-      name,
-      image,
+      ...updateObjsect,
     });
     toast.success("profile updated");
-    router.refresh()
+    router.refresh();
   };
   // console.log(user.image);
   return (
