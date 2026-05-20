@@ -18,7 +18,7 @@ const data = getBookingDoctor().then(data=>setBooking(data))
 
   return (
     <div>
-      { booking?
+      {! booking?
       <MyBookingcard booking={booking} />
  :  <NotFoundcard/>  }
     </div>

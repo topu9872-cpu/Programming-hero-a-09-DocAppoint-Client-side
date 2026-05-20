@@ -10,10 +10,10 @@ const MyBookingcard = ({ booking }) => {
           key={book._id}
           className="group relative flex flex-col lg:flex-row gap-6 my-8 rounded-3xl border border-base-300 bg-base-100/80 backdrop-blur-md shadow-lg hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
         >
-          {/* Glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+          
+          <div className="absolute inset-0 bg-linear-to-r from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-          {/* IMAGE */}
+         
           <div className="relative w-full lg:w-80 h-64 overflow-hidden">
             <Image
               src={book?.image}

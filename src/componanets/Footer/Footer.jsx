@@ -7,7 +7,7 @@ import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="card border-2 border-gray-300">
+    <footer className="card border-2 mt-20 border-gray-300">
       <div className="footer sm:footer-horizontal  p-10">
         <div className="flex ">
           <h1 className="text-2xl font-bold">
