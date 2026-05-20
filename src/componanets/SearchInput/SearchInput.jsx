@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 
 import NotFoundcard from "../NotFoundCard/NotFoundcard";
-import AllCards from "@/app/all-cards/page";
+import AllCards from "@/app/all-cards/AllCards";
 
 const SearchInput = ({ doctors }) => {
   const [search, setSearch] = useState("");

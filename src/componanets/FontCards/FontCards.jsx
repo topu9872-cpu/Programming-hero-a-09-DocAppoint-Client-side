@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 import { getDoctors } from "../../../lib/actiondata";
-import AllCards from "@/app/all-cards/page";
+import AllCards from "@/app/all-cards/AllCards";
 
 const FontCards = async () => {
  const doctors= await getDoctors()

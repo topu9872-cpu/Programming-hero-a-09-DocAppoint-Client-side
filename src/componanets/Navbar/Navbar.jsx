@@ -105,7 +105,8 @@ await authClient.signOut({
           >
             <Image
               src="/assets/docicon.png"
-              fill
+              width={70}
+              height={70}
               alt="icon"
               className="object-contain rounded-sm"
             />

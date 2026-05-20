@@ -6,9 +6,16 @@ import "react-tabs/style/react-tabs.css";
 
 import MyBookings from "@/componanets/MyBookings/MyBooking";
 import MyProfile from "@/componanets/MyProfile/MyProfile";
+import { authClient } from "@/lib/auth-client";
+import { redirect } from "next/navigation";
 
 const Dashboard = () => {
   const [tabIndex, setTabIndex] = useState(0);
+  //  const { data: session } = authClient.useSession();
+  //   const user = session?.user;
+  //   if(!user){
+  //     redirect('/login')
+  //   }
 
   return (
     <div className="p-6">
