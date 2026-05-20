@@ -3,7 +3,7 @@ import { getBookingappoinmentDelete } from "../../../lib/actiondata";
 import toast from "react-hot-toast";
 
 const BookingDelete = ({ book }) => {
-  console.log(book.name);
+
   const handleDelete = async (id) => {
     const getDelete = await getBookingappoinmentDelete(id);
     console.log(getDelete);

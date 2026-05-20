@@ -37,7 +37,7 @@ await authClient.signOut({
           pathName === "/" ? "text-info" : ""
         }`}
       >
-        <Link href={"/"}>Homepage</Link>
+        <Link href={"/"}>Home page</Link>
       </li>
 
       <li
@@ -142,7 +142,7 @@ await authClient.signOut({
         </div>
 :
         <div className="relative flex items-center space-x-5">
-          <div className=" text-xl font-bold text-info  right-40 absolute flex w-18 truncate overflow-hidden">{user?.name} </div>
+          <div className=" text-sm font-bold text-info  right-43 absolute flex w-18 truncate overflow-hidden">{user?.name} </div>
           
           <div className="avatar">
   <div className="w-24 rounded-full">

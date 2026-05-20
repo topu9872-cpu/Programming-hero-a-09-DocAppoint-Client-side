@@ -11,7 +11,7 @@ export const metadata = {
 };
 const AllAppoinment = () => {
   return (
-    <div className="my-10 mx-auto">
+    <div className="my-10 mt-30 mx-auto">
       <SearchInput doctors={doctors} />
     </div>
   );

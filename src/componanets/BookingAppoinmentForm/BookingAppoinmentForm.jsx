@@ -5,9 +5,6 @@ import { getBookingAppoinment } from "../../../lib/actiondata";
 import toast from "react-hot-toast";
 
 const BookingAppoinmentForm = ({ doctorDetails }) => {
- 
-
-
   const handleBooking = async (e) => {
     e.preventDefault();
 
@@ -19,11 +16,12 @@ const BookingAppoinmentForm = ({ doctorDetails }) => {
       name: bookingDatas.name,
       email: bookingDatas.email,
       phone: bookingDatas.phone,
+      gender: bookingDatas.gender,
       date: bookingDatas.date,
       time: bookingDatas.time,
-      image:doctorDetails.image,
-      fee:doctorDetails.fee,
-      availability:doctorDetails.availability,
+      image: doctorDetails.image,
+      fee: doctorDetails.fee,
+      availability: doctorDetails.availability,
     };
 
     const res = await getBookingAppoinment(bookingData);
@@ -31,9 +29,8 @@ const BookingAppoinmentForm = ({ doctorDetails }) => {
       toast.success("Appointment booked successfully!", {
         position: "top-right",
       });
-      window.location.reload()
+      window.location.reload();
     }
- 
   };
 
   return (
@@ -67,6 +64,34 @@ const BookingAppoinmentForm = ({ doctorDetails }) => {
                     <Label>Phone</Label>
                     <Input placeholder="Enter your phone number" />
                   </TextField>
+                  <label>Gender</label>
+                  <div className="flex gap-3">
+                    <div>
+                    <input type="radio" id="male" name="gender" value="male" />
+                    <label for="male">Male</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      value="female"
+                    />
+                    <label for="female">Female</label>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      id="other"
+                      name="gender"
+                      value="other"
+                    />
+                      <label for="other">Other</label>
+                  </div>
+                
+                  </div>
                   <TextField className="w-full" name="date">
                     <Label>Appointment Date</Label>
                     <Input type="date" />
@@ -79,7 +104,7 @@ const BookingAppoinmentForm = ({ doctorDetails }) => {
                     <Button slot="close" variant="secondary">
                       Cancel
                     </Button>
-                    <Button  type="submit">Book Appointment </Button>
+                    <Button type="submit">Book Appointment </Button>
                   </Modal.Footer>
                 </form>
               </Surface>

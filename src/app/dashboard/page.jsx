@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [tabIndex, setTabIndex] = useState(0);
   
   return (
-    <div className="p-6">
+    <div className="p-6 mt-20">
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         
         <TabList className="flex gap-3 bg-gray-200 p-2 rounded-lg w-fit">
