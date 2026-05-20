@@ -14,6 +14,7 @@ import {
   ShieldCheck,
   Stethoscope,
 } from "lucide-react";
+import Link from "next/link";
 
 const slides = [
   {
@@ -106,8 +107,8 @@ export default function Banner() {
 
               
                   <div className="flex flex-col items-center gap-4 sm:flex-row md:items-start">
-                    <button className="group flex items-center gap-2 rounded-2xl bg-cyan-500 px-7 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-cyan-400">
-                      Book Appointment
+                    <button className="group flex items-center gap-2 rounded-2xl bg-cyan-500 px-7 py-4 font-semibold text-black transition-all duration-300 cursor-pointer hover:scale-105 hover:bg-cyan-400">
+                     <Link href={'/all-appoinment'}> Book Appointment</Link>
                       <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                     </button>
 

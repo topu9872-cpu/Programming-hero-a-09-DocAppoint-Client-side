@@ -31,6 +31,7 @@ const BookingAppoinmentForm = ({ doctorDetails }) => {
       toast.success("Appointment booked successfully!", {
         position: "top-right",
       });
+      window.location.reload()
     }
  
   };
@@ -78,7 +79,7 @@ const BookingAppoinmentForm = ({ doctorDetails }) => {
                     <Button slot="close" variant="secondary">
                       Cancel
                     </Button>
-                    <Button type="submit">Book Appointment </Button>
+                    <Button  type="submit">Book Appointment </Button>
                   </Modal.Footer>
                 </form>
               </Surface>
