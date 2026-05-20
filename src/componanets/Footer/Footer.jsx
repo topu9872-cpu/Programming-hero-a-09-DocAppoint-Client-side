@@ -7,10 +7,10 @@ import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="footer sm:footer-horizontal bg-base-300 text-base-content p-10">
+    <footer className="card border-2 border-gray-300">
+      <div className="footer sm:footer-horizontal  p-10">
         <div className="flex ">
-          <h1 className="text-2xl font-bold text-gray-800">
+          <h1 className="text-2xl font-bold">
             Doctor Appointment <span className="text-blue-600">Manager</span>
           </h1>
           <p className="text-sm text-gray-500"></p>
@@ -24,7 +24,7 @@ const Footer = () => {
         </nav>
         <nav>
           <h6 className="footer-title">Social</h6>
-          <div className="grid grid-flow-col gap-4">
+          <div className="grid grid-flow-col text-black gap-4">
             <a
               href="https://github.com"
               target="_blank"
@@ -52,7 +52,7 @@ const Footer = () => {
 
        
       </div>
-       <footer className="footer sm:footer-horizontal border-t border-gray-300 footer-center bg-base-300 text-base-content p-4">
+       <footer className="footer sm:footer-horizontal border-t border-gray-300 footer-center p-4">
           <aside>
             <p>
               Copyright © {new Date().getFullYear()} - All right reserved by

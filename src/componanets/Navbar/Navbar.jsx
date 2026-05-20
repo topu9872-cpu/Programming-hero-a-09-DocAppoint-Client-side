@@ -7,6 +7,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
+import ThemeToggleBtn from "../ThemeToggleBtn/ThemeToggleBtn";
 
 const Navbar = () => {
   const router=useRouter()
@@ -58,11 +59,12 @@ await authClient.signOut({
   );
 
   return (
+    <div>
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration:1, ease: "easeOut" }}
-      className="w-full bg-base-100/80 backdrop-blur-md shadow-sm sticky top-0 z-50"
+      className="w-full backdrop-blur-md shadow-sm fixed top-0 z-50"
     >
       <div className="navbar  mx-auto px-4 sm:px-10 lg:px-20 flex justify-between relative">
         
@@ -139,8 +141,8 @@ await authClient.signOut({
           </motion.button>
         </div>
 :
-        <div className="relative flex space-x-5">
-          <div className=" text-xl font-bold text-info mr-14 right-20 absolute flex w-30 truncate overflow-hidden">{user?.name} </div>
+        <div className="relative flex items-center space-x-5">
+          <div className=" text-xl font-bold text-info  right-40 absolute flex w-18 truncate overflow-hidden">{user?.name} </div>
           
           <div className="avatar">
   <div className="w-24 rounded-full">
@@ -157,10 +159,14 @@ await authClient.signOut({
           >
             Logout
           </motion.button>
+          <ThemeToggleBtn/>
         </div>
 }
+
       </div>
     </motion.nav>
+    
+    </div>
   );
 };
 

@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { getBookingDoctor } from "../../../lib/actiondata";
 import MyBookingcard from "./MyBookingcard";
 import NotFoundcard from "../NotFoundCard/NotFoundcard";
-
+import { authClient } from "@/lib/auth-client";
 
 
 
 const MyBookings =  () => {
   
-  
+ 
   const [booking, setBooking]=useState([])
 useEffect(()=>{
 const data = getBookingDoctor().then(data=>setBooking(data))

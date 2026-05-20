@@ -45,9 +45,9 @@ const slides = [
 
 export default function Banner() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden mt-22">
      
-      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl" />
+      <div className="absolute left-0  h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl" />
       <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
 
       <Swiper

@@ -9,14 +9,10 @@ const db = client.db();
 export const auth = betterAuth({
 
 
-
-
     database: mongodbAdapter(db, {
 
         client
     }),
-
-
 
     emailAndPassword: {
         enabled: true,
@@ -30,11 +26,15 @@ export const auth = betterAuth({
             clientId: process.env.GITHUB_CLIENT_ID,
             clientSecret: process.env.GITHUB_CLIENT_SECRET,
         },
+       
     },
-    plugins: [
-        jwt()
-    ]
+     session: {
+    cookieCache: {
+      enabled: true,
+      strategy: "jwt",
+      maxAge: 7 * 24 * 60 * 60, // 7 days
+    },
+  },
 
-
+  plugins: [jwt()],
 });
-
