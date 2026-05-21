@@ -27,11 +27,12 @@ const HospitalWork = () => {
         className="p-6 space-y-4 card text-center shadow-[0_0_4px] hover-3d hover:shadow-[0_0_10px_5px_#00ffff] rounded-xl"
       >
         <Image
-          className="mx-auto text-cyan-500"
-          src="/assets/doctor (1).png"
+          
+          src="/assets/doctor.png"
           width={50}
           height={50}
           alt="doctor"
+             className="mx-auto bg-none text-cyan-500"
         />
         <h1 className="text-3xl text-info">Qualified Doctors</h1>
         <p>
@@ -49,11 +50,12 @@ const HospitalWork = () => {
         className="p-6 space-y-4 card text-center shadow-[0_0_4px] hover-3d hover:shadow-[0_0_10px_5px_#00ffff] rounded-xl"
       >
         <Image
-          className="mx-auto text-cyan-500"
+         
           src="/assets/ventilation.png"
           width={50}
           height={50}
-          alt="doctor"
+          alt="ventilation"
+             className="mx-auto bg-none text-cyan-500"
         />
         <h1 className="text-3xl text-info">Modern Equipment</h1>
         <p>
@@ -71,11 +73,12 @@ const HospitalWork = () => {
         className="p-6 space-y-4 card text-center shadow-[0_0_4px] hover-3d hover:shadow-[0_0_10px_5px_#00ffff] rounded-xl"
       >
         <Image
-          className="mx-auto text-cyan-500"
-          src="/assets/emergency-ambulance.png"
+         
+          src="/assets/icons8-ambulance-80.png"
           width={50}
           height={50}
           alt="doctor"
+           className="mx-auto  bg-none text-cyan-500"
         />
         <h1 className="text-3xl text-info">Emergency Help</h1>
         <p>
@@ -93,11 +96,13 @@ const HospitalWork = () => {
         className="p-6 space-y-4 card text-center shadow-[0_0_4px] hover-3d hover:shadow-[0_0_10px_5px_#00ffff] rounded-xl"
       >
         <Image
-          className="mx-auto text-cyan-500"
+       
           src="/assets/stethoscope.png"
           width={50}
           height={50}
           alt="doctor"
+             className="mx-auto bg-none text-cyan-500"
+        
         />
         <h1 className="text-3xl text-info">Individual Approach</h1>
         <p>
