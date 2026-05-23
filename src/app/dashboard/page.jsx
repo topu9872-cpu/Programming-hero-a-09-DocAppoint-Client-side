@@ -6,10 +6,8 @@ import "react-tabs/style/react-tabs.css";
 
 import MyBookings from "@/componanets/MyBookings/MyBooking";
 import MyProfile from "@/componanets/MyProfile/MyProfile";
-
 const Dashboard = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  
   return (
     <div className="p-6 mt-20">
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
