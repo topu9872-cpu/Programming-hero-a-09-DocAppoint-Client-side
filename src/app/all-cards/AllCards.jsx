@@ -51,7 +51,7 @@ const AllCards = ({ doctor }) => {
           </div>
         </div>
 
-        {/* Availability + Fee */}
+        
         <div className="flex justify-between items-center font-medium text-gray-700">
           <h2 className="flex items-center gap-2 text-sm">
             <Clock className="text-info w-4 h-4" />
