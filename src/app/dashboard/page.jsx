@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-
 import MyBookings from "@/componanets/MyBookings/MyBooking";
 import MyProfile from "@/componanets/MyProfile/MyProfile";
 const Dashboard = () => {
