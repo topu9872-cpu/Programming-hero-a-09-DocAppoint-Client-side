@@ -13,7 +13,7 @@ const MyBookings = () => {
 
   return (
     <div>
-      {booking ? <MyBookingcard booking={booking} /> : <NotFoundcard />}
+      {booking.length > 0 ?   <NotFoundcard />: <MyBookingcard booking={booking} />}
     </div>
   );
 };
